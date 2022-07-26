@@ -1,0 +1,86 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "Tahmid Spothero",
+    "version": "1.0.0",
+    "title": "Tahmid-Spothero-rest-api",
+    "contact": {
+      "email": "Not_A_Real_email@email.com"
+    },
+    "license": {
+      "name": "Spothero pls pay",
+      "url": "https://opensource.org/licenses/spothero"
+    }
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Rates request",
+      "description": "Api for getting and putting Rates"
+    }
+  ],
+  "paths": {
+    "/rates": {
+      "get": {
+        "tags": [
+          "Rates get request"
+        ],
+        "summary": "Returns all rates",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "No Rates Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Rates put request"
+        ],
+        "summary": "Stores a rate",
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "409": {
+            "description": "Rate cannot be created"
+          }
+        }
+      }
+    },
+    "/price": {
+      "parameters": [
+        {
+          "start": "Start date",
+          "end": "End date"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Price get request"
+        ],
+        "summary": "Returns price for a given date range",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Unavailable"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "id": {}
+    }
+  },
+  "swagger": "2.0"
+}

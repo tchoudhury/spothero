@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  spothero:
+    build:
+      context: ./
+    ports:
+      - 5000:5000
+    expose:
+      - '5000'
